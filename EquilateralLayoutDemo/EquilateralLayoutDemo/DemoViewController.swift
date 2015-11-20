@@ -8,21 +8,20 @@
 
 import UIKit
 
-class HorizontalDemoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class DemoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var collectionView: UICollectionView!
     var layout: EquilateralLayout!
     var items = [EquilateralPhotoItem]()
-    var numberOfItems = 200
-    var strokeColor = UIColor.redColor()
+    var numberOfItems: Int!
+    var strokeColor: UIColor!
+    var scrollDirection: UICollectionViewScrollDirection!
     
-    init() {
+    init(numberOfItems: Int, strokeColor: UIColor, scrollDirection: UICollectionViewScrollDirection) {
         super.init(nibName: nil, bundle: nil)
-        
-        self.tabBarItem.image = UIImage(named: "horizontal")
-        self.tabBarItem.title = "Horizontal"
-        
-        generateRandomItems()
+        self.numberOfItems = numberOfItems
+        self.strokeColor = strokeColor
+        self.scrollDirection = scrollDirection
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,28 +32,32 @@ class HorizontalDemoViewController: UIViewController, UICollectionViewDataSource
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.whiteColor()
-        
+        generateRandomItems()
+        setupLayout()
+        setupCollectionView()
+    }
+    
+    func setupLayout() {
+        layout = EquilateralLayout()
+        layout.scrollDirection = scrollDirection
+        layout.itemSize = CGSize(width: 90, height: 90)
+        layout.startingOffset = 80.0
+        layout.itemSpacing = 8.0
     }
     
     func setupCollectionView() {
-//        self.collectionView = UICollectionView(frame: self.view.bounds), collectionViewLayout:layout)
-//        self.collectionView.backgroundColor = SphereColors.clear
-//        self.collectionView.delegate = self
-//        self.collectionView
-//            .dataSource = self
-//        
-//        if self.useEquilateralLayout {
-//            self.feedView.registerClass(HexagonProfilePicCell.self, forCellWithReuseIdentifier: HexagonProfilePicCell.ReuseIdentifier)
-//        }
-//        else {
-//            self.feedView.registerClass(NetworkUserCell.self, forCellWithReuseIdentifier: NetworkUserCell.ReuseIdentifier)
-//        }
-//        self.view.addSubview(self.feedView)
+        collectionView = UICollectionView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44), collectionViewLayout:layout)
+        collectionView.backgroundColor = UIColor.clearColor()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerClass(EquilateralPhotoCell.self, forCellWithReuseIdentifier: EquilateralPhotoCell.ReuseIdentifier)
+        self.view.addSubview(self.collectionView)
     }
     
     func generateRandomItems() {
         for index in 0..<numberOfItems {
-            let item = (NSURL(string: "http://lorempixel.com/200/200/?_=\(index)")!, strokeColor)
+            let photoURL: NSURL! = NSURL(string: "http://lorempixel.com/200/200/?_=\(index)")
+            let item = (photoURL, strokeColor)
             items.append(item)
         }
     }

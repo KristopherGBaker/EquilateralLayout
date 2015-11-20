@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		194774341BFEE85C00E9E31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774331BFEE85C00E9E31F /* AppDelegate.swift */; };
-		194774361BFEE85C00E9E31F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774351BFEE85C00E9E31F /* ViewController.swift */; };
-		194774391BFEE85C00E9E31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194774371BFEE85C00E9E31F /* Main.storyboard */; };
 		1947743B1BFEE85C00E9E31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1947743A1BFEE85C00E9E31F /* Assets.xcassets */; };
 		1947743E1BFEE85C00E9E31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1947743C1BFEE85C00E9E31F /* LaunchScreen.storyboard */; };
+		194774481BFEEA5300E9E31F /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774471BFEEA5300E9E31F /* DemoViewController.swift */; };
+		1947744C1BFEF03E00E9E31F /* EquilateralPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947744B1BFEF03E00E9E31F /* EquilateralPhotoView.swift */; };
+		1947744E1BFEF05300E9E31F /* EquilateralPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947744D1BFEF05300E9E31F /* EquilateralPhotoCell.swift */; };
+		194774581BFEF59500E9E31F /* DirectedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774531BFEF59500E9E31F /* DirectedPoint.swift */; };
+		194774591BFEF59500E9E31F /* EquilateralLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774541BFEF59500E9E31F /* EquilateralLayout.swift */; };
+		1947745A1BFEF59500E9E31F /* OrderedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774551BFEF59500E9E31F /* OrderedArray.swift */; };
+		1947745B1BFEF59500E9E31F /* PointPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774561BFEF59500E9E31F /* PointPair.swift */; };
+		1947745C1BFEF59500E9E31F /* RoundedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774571BFEF59500E9E31F /* RoundedPoint.swift */; };
+		1947745E1BFEF62E00E9E31F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1947745D1BFEF62E00E9E31F /* CoreGraphics.framework */; };
+		194774601BFEF68200E9E31F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1947745F1BFEF68200E9E31F /* UIKit.framework */; };
+		194774621BFEF68800E9E31F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194774611BFEF68800E9E31F /* Foundation.framework */; };
+		F5A413547DE10155A537601C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5C78ED9F4A2C2BEDB55FBF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		194774301BFEE85C00E9E31F /* EquilateralLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EquilateralLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194774331BFEE85C00E9E31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		194774351BFEE85C00E9E31F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		194774381BFEE85C00E9E31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1947743A1BFEE85C00E9E31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1947743D1BFEE85C00E9E31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1947743F1BFEE85C00E9E31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		194774471BFEEA5300E9E31F /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		1947744B1BFEF03E00E9E31F /* EquilateralPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralPhotoView.swift; sourceTree = "<group>"; };
+		1947744D1BFEF05300E9E31F /* EquilateralPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralPhotoCell.swift; sourceTree = "<group>"; };
+		194774531BFEF59500E9E31F /* DirectedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectedPoint.swift; sourceTree = "<group>"; };
+		194774541BFEF59500E9E31F /* EquilateralLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralLayout.swift; sourceTree = "<group>"; };
+		194774551BFEF59500E9E31F /* OrderedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedArray.swift; sourceTree = "<group>"; };
+		194774561BFEF59500E9E31F /* PointPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointPair.swift; sourceTree = "<group>"; };
+		194774571BFEF59500E9E31F /* RoundedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedPoint.swift; sourceTree = "<group>"; };
+		1947745D1BFEF62E00E9E31F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1947745F1BFEF68200E9E31F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		194774611BFEF68800E9E31F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D65B0D9845D66D01C0D6033B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D754240E1C181CBC1E4A8F3E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FF5C78ED9F4A2C2BEDB55FBF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194774621BFEF68800E9E31F /* Foundation.framework in Frameworks */,
+				194774601BFEF68200E9E31F /* UIKit.framework in Frameworks */,
+				1947745E1BFEF62E00E9E31F /* CoreGraphics.framework in Frameworks */,
+				F5A413547DE10155A537601C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +64,11 @@
 		194774271BFEE85C00E9E31F = {
 			isa = PBXGroup;
 			children = (
+				194774521BFEF59500E9E31F /* EquilateralLayout */,
 				194774321BFEE85C00E9E31F /* EquilateralLayoutDemo */,
 				194774311BFEE85C00E9E31F /* Products */,
+				7AE7C5C1C38D6069B9088A51 /* Pods */,
+				DCF5924835632C053306E74C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +84,47 @@
 			isa = PBXGroup;
 			children = (
 				194774331BFEE85C00E9E31F /* AppDelegate.swift */,
-				194774351BFEE85C00E9E31F /* ViewController.swift */,
-				194774371BFEE85C00E9E31F /* Main.storyboard */,
 				1947743A1BFEE85C00E9E31F /* Assets.xcassets */,
+				194774471BFEEA5300E9E31F /* DemoViewController.swift */,
 				1947743C1BFEE85C00E9E31F /* LaunchScreen.storyboard */,
 				1947743F1BFEE85C00E9E31F /* Info.plist */,
+				1947744B1BFEF03E00E9E31F /* EquilateralPhotoView.swift */,
+				1947744D1BFEF05300E9E31F /* EquilateralPhotoCell.swift */,
 			);
 			path = EquilateralLayoutDemo;
+			sourceTree = "<group>";
+		};
+		194774521BFEF59500E9E31F /* EquilateralLayout */ = {
+			isa = PBXGroup;
+			children = (
+				194774531BFEF59500E9E31F /* DirectedPoint.swift */,
+				194774541BFEF59500E9E31F /* EquilateralLayout.swift */,
+				194774551BFEF59500E9E31F /* OrderedArray.swift */,
+				194774561BFEF59500E9E31F /* PointPair.swift */,
+				194774571BFEF59500E9E31F /* RoundedPoint.swift */,
+			);
+			name = EquilateralLayout;
+			path = ../EquilateralLayout;
+			sourceTree = "<group>";
+		};
+		7AE7C5C1C38D6069B9088A51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D65B0D9845D66D01C0D6033B /* Pods.debug.xcconfig */,
+				D754240E1C181CBC1E4A8F3E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCF5924835632C053306E74C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				194774611BFEF68800E9E31F /* Foundation.framework */,
+				1947745F1BFEF68200E9E31F /* UIKit.framework */,
+				1947745D1BFEF62E00E9E31F /* CoreGraphics.framework */,
+				FF5C78ED9F4A2C2BEDB55FBF /* Pods.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 194774421BFEE85C00E9E31F /* Build configuration list for PBXNativeTarget "EquilateralLayoutDemo" */;
 			buildPhases = (
+				4D73D9CF2B59A225C7AD0453 /* Check Pods Manifest.lock */,
 				1947742C1BFEE85C00E9E31F /* Sources */,
 				1947742D1BFEE85C00E9E31F /* Frameworks */,
 				1947742E1BFEE85C00E9E31F /* Resources */,
+				FF9C99915A89E5FD243A9A55 /* Embed Pods Frameworks */,
+				616AFA50026F7A19338987F2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,33 +190,79 @@
 			files = (
 				1947743E1BFEE85C00E9E31F /* LaunchScreen.storyboard in Resources */,
 				1947743B1BFEE85C00E9E31F /* Assets.xcassets in Resources */,
-				194774391BFEE85C00E9E31F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D73D9CF2B59A225C7AD0453 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		616AFA50026F7A19338987F2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF9C99915A89E5FD243A9A55 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1947742C1BFEE85C00E9E31F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194774361BFEE85C00E9E31F /* ViewController.swift in Sources */,
+				1947745A1BFEF59500E9E31F /* OrderedArray.swift in Sources */,
+				1947744E1BFEF05300E9E31F /* EquilateralPhotoCell.swift in Sources */,
 				194774341BFEE85C00E9E31F /* AppDelegate.swift in Sources */,
+				194774481BFEEA5300E9E31F /* DemoViewController.swift in Sources */,
+				1947745B1BFEF59500E9E31F /* PointPair.swift in Sources */,
+				1947745C1BFEF59500E9E31F /* RoundedPoint.swift in Sources */,
+				194774581BFEF59500E9E31F /* DirectedPoint.swift in Sources */,
+				1947744C1BFEF03E00E9E31F /* EquilateralPhotoView.swift in Sources */,
+				194774591BFEF59500E9E31F /* EquilateralLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		194774371BFEE85C00E9E31F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				194774381BFEE85C00E9E31F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1947743C1BFEE85C00E9E31F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -245,6 +357,7 @@
 		};
 		194774431BFEE85C00E9E31F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D65B0D9845D66D01C0D6033B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EquilateralLayoutDemo/Info.plist;
@@ -256,6 +369,7 @@
 		};
 		194774441BFEE85C00E9E31F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D754240E1C181CBC1E4A8F3E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EquilateralLayoutDemo/Info.plist;
@@ -284,6 +398,7 @@
 				194774441BFEE85C00E9E31F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

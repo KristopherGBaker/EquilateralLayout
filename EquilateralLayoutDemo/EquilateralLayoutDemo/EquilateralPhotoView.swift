@@ -8,14 +8,9 @@
 
 import UIKit
 
-enum EquilateralPhotoType {
-    case Hexagon
-    case Circle
-}
-
 class EquilateralPhotoView: UIView {
     
-    var strokeColor: UIColor = UIColor(fromHexValue: 0xFFB8E986) {
+    var strokeColor: UIColor = UIColor(red: 0xB8/255.0, green: 0xE9/255.0, blue: 0x68/255.0, alpha: 1.0) {
         didSet {
             self.setNeedsDisplay()
         }
@@ -29,23 +24,17 @@ class EquilateralPhotoView: UIView {
     
     override var frame: CGRect {
         didSet {
-            self.profilePicView.frame = self.bounds
+            self.imageView.frame = self.bounds
         }
     }
     
-    var hexagonProfilePicType = HexagonProfilePicType.Circle {
-        didSet {
-            self.profilePicView.frame = self.bounds
-        }
-    }
-    
-    let profilePicView = UIImageView(frame: CGRectZero)
+    let imageView = UIImageView(frame: CGRectZero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = SphereColors.clear
-        self.profilePicView.contentMode = UIViewContentMode.ScaleAspectFill
-        self.addSubview(self.profilePicView)
+        self.backgroundColor = UIColor.clearColor()
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.addSubview(self.imageView)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -53,31 +42,16 @@ class EquilateralPhotoView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        var hexagonPath: UIBezierPath!
+        let path = UIBezierPath(arcCenter: CGPointMake(0.5 * self.bounds.size.width, 0.5 * self.bounds.size.height), radius: 0.5 * min(self.bounds.size.width, self.bounds.size.height) - self.strokeWidth, startAngle: 0, endAngle: 2 * CGFloat(M_PI), clockwise: false)
         
-        if self.hexagonProfilePicType == .Hexagon {
-            hexagonPath = UIBezierPath()
-            hexagonPath.moveToPoint(CGPointMake(rect.minX + 0.5 * rect.width, rect.minY + 0.01 * rect.height + self.strokeWidth))
-            hexagonPath.addLineToPoint(CGPointMake(rect.minX + 0.98851 * rect.width - self.strokeWidth, rect.minY + 0.255 * rect.height + self.strokeWidth*0.25))
-            hexagonPath.addLineToPoint(CGPointMake(rect.minX + 0.98851 * rect.width - self.strokeWidth, rect.minY + 0.745 * rect.height - self.strokeWidth*0.25))
-            hexagonPath.addLineToPoint(CGPointMake(rect.minX + 0.5 * rect.width, rect.minY + 0.99 * rect.height - self.strokeWidth))
-            hexagonPath.addLineToPoint(CGPointMake(rect.minX + 0.01149 * rect.width, rect.minY + 0.745 * rect.height - self.strokeWidth*0.25))
-            hexagonPath.addLineToPoint(CGPointMake(rect.minX + 0.01149 * rect.width, rect.minY + 0.255 * rect.height + self.strokeWidth*0.25))
-            hexagonPath.addLineToPoint(CGPointMake(rect.minX + 0.5 * rect.width, rect.minY + 0.01 * rect.height + self.strokeWidth))
-            hexagonPath.closePath()
-        }
-        else {
-            hexagonPath = UIBezierPath(arcCenter: CGPointMake(0.5 * self.bounds.size.width, 0.5 * self.bounds.size.height), radius: 0.5 * min(self.bounds.size.width, self.bounds.size.height) - self.strokeWidth, startAngle: 0, endAngle: 2 * CGFloat(M_PI), clockwise: false)
-        }
-        
-        hexagonPath.lineWidth = self.strokeWidth
+        path.lineWidth = self.strokeWidth
         self.strokeColor.setStroke()
-        hexagonPath.stroke()
+        path.stroke()
         
         let maskLayer = CAShapeLayer()
         maskLayer.frame = rect
-        maskLayer.path = hexagonPath.CGPath;
-        self.profilePicView.layer.mask = maskLayer
+        maskLayer.path = path.CGPath;
+        self.imageView.layer.mask = maskLayer
     }
     
 }
