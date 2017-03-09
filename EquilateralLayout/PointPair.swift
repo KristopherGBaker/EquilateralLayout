@@ -1,10 +1,9 @@
 //
 // Created by Kristopher Baker on 11/5/15.
-// Copyright (c) 2015 Bodybuilding.com. All rights reserved.
+// Copyright (c) 2017 EmpyrealNight, LLC. All rights reserved.
 //
 
-import CoreGraphics
-import UIKit
+import Foundation
 
 struct PointPair: Comparable, Hashable {
 
@@ -29,16 +28,16 @@ struct PointPair: Comparable, Hashable {
         }
     }
 
-    fileprivate mutating func updateHash() {
+    private mutating func updateHash() {
         let key = "\(first.point.x),\(first.point.y),\(second.point.x),\(second.point.y)"
         hashValue = key.hashValue
     }
 
-    fileprivate (set) var hashValue: Int = "0.0,0.0,0.0,0.0".hashValue
+    private (set) var hashValue: Int = "0.0,0.0,0.0,0.0".hashValue
 
     var scrollDirection: UICollectionViewScrollDirection = .horizontal
 
-    fileprivate static let equilateralRotationAngle = CGFloat(M_PI/3.0)
+    private static let equilateralRotationAngle = CGFloat(M_PI/3.0)
 
     // generates both points that form equilateral triangles with first and second
     func equilateralPoints() -> PointPair {
@@ -51,8 +50,8 @@ struct PointPair: Comparable, Hashable {
         let customRotation2 = translateTransform.inverted().concatenating(rotationTransform2).concatenating(translateTransform);
         let p4 = CGPoint(x: first.point.x, y: first.point.y).applying(customRotation2);
 
-        let d1 = DirectedPoint(point: CGPoint.roundedPoint(x: p3.x, y: p3.y), scrollDirection: first.scrollDirection)
-        let d2 = DirectedPoint(point: CGPoint.roundedPoint(x: p4.x, y: p4.y), scrollDirection: first.scrollDirection)
+        let d1 = DirectedPoint(point: .roundedPoint(x: p3.x, y: p3.y), scrollDirection: first.scrollDirection)
+        let d2 = DirectedPoint(point: .roundedPoint(x: p4.x, y: p4.y), scrollDirection: first.scrollDirection)
 
         return PointPair(first: d1, second: d2)
     }

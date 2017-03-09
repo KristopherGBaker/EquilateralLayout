@@ -3,7 +3,7 @@
 //  Sphere
 //
 //  Created by Kristopher Baker on 10/29/15.
-//  Copyright © 2015 Bodybuilding.com. All rights reserved.
+//  Copyright © 2017 EmpyrealNight, LLC. All rights reserved.
 //
 
 import CoreGraphics
@@ -90,7 +90,6 @@ public class EquilateralLayout: UICollectionViewLayout {
         }
         
         var itemIndex = 0
-//        var pointOut = "\n"
         
         let touchLocation = collectionView.panGestureRecognizer.location(in: collectionView)
         
@@ -100,8 +99,6 @@ public class EquilateralLayout: UICollectionViewLayout {
             attributes.size = itemSize
             attributes.center = directedPoint.point
             var center = directedPoint.point
-            
-//            pointOut += "\(directedPoint.point.x),\(directedPoint.point.y)\n"
             
             let springBehaviour = UIAttachmentBehavior(item: attributes, attachedToAnchor: directedPoint.point)
             springBehaviour.length = 0.0
@@ -135,11 +132,9 @@ public class EquilateralLayout: UICollectionViewLayout {
             
             dynamicAnimator.addBehavior(springBehaviour)
         }
-//        print(pointOut + "\n")
     }
 
-    fileprivate func generatePoints(_ firstPair: PointPair, itemCount: Int, bounds: CGRect, halfWidth: CGFloat, halfHeight: CGFloat) -> CGFloat {
-//        let start = NSDate().timeIntervalSince1970
+    private func generatePoints(_ firstPair: PointPair, itemCount: Int, bounds: CGRect, halfWidth: CGFloat, halfHeight: CGFloat) -> CGFloat {
         
         var pairs = [PointPair]()
         pairs.append(firstPair)
@@ -203,9 +198,6 @@ public class EquilateralLayout: UICollectionViewLayout {
                 }
             }
         }
-        
-//        let end = NSDate().timeIntervalSince1970
-//        print("generating points took \(end - start) seconds")
         
         return scrollDirection == .horizontal ? maxX : maxY
     }

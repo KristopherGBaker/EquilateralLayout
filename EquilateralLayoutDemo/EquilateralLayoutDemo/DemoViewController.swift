@@ -13,13 +13,11 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     var collectionView: UICollectionView!
     var layout: EquilateralLayout!
-    var items = [EquilateralPhotoItem]()
+    var items = [URL]()
     var numberOfItems: Int
-    var strokeColor: UIColor
     var scrollDirection: UICollectionViewScrollDirection
     
-    init(numberOfItems: Int, strokeColor: UIColor, scrollDirection: UICollectionViewScrollDirection) {
-        self.strokeColor = strokeColor
+    init(numberOfItems: Int, scrollDirection: UICollectionViewScrollDirection) {
         self.numberOfItems = numberOfItems
         self.scrollDirection = scrollDirection
         super.init(nibName: nil, bundle: nil)
@@ -32,10 +30,14 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.white
+        view.backgroundColor = .white
         generateRandomItems()
         setupLayout()
         setupCollectionView()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func setupLayout() {
@@ -52,14 +54,14 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(EquilateralPhotoCell.self, forCellWithReuseIdentifier: EquilateralPhotoCell.ReuseIdentifier)
-        self.view.addSubview(self.collectionView)
+        view.addSubview(collectionView)
     }
     
     func generateRandomItems() {
         for index in 0..<numberOfItems {
-            let photoURL: URL = URL(string: "http://lorempixel.com/200/200/?_=\(index)")!
-            let item = (photoURL: photoURL, strokeColor: strokeColor)
-            items.append(item)
+            if let photoURL: URL = URL(string: "http://lorempixel.com/200/200/?_=\(index)") {
+                items.append(photoURL)
+            }
         }
     }
     
@@ -73,7 +75,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let photoCell = cell as? EquilateralPhotoCell {
-            photoCell.configure(self.items[indexPath.item])
+            photoCell.configure(url: items[indexPath.item])
         }
     }
 }

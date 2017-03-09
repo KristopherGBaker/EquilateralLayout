@@ -1,6 +1,6 @@
 //
 // Created by Kristopher Baker on 11/5/15.
-// Copyright (c) 2015 Bodybuilding.com. All rights reserved.
+// Copyright (c) 2017 EmpyrealNight, LLC. All rights reserved.
 //
 
 import Foundation

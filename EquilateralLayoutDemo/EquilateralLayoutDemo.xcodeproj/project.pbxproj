@@ -11,7 +11,6 @@
 		1947743B1BFEE85C00E9E31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1947743A1BFEE85C00E9E31F /* Assets.xcassets */; };
 		1947743E1BFEE85C00E9E31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1947743C1BFEE85C00E9E31F /* LaunchScreen.storyboard */; };
 		194774481BFEEA5300E9E31F /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194774471BFEEA5300E9E31F /* DemoViewController.swift */; };
-		1947744C1BFEF03E00E9E31F /* EquilateralPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947744B1BFEF03E00E9E31F /* EquilateralPhotoView.swift */; };
 		1947744E1BFEF05300E9E31F /* EquilateralPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947744D1BFEF05300E9E31F /* EquilateralPhotoCell.swift */; };
 		1947745E1BFEF62E00E9E31F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1947745D1BFEF62E00E9E31F /* CoreGraphics.framework */; };
 		194774601BFEF68200E9E31F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1947745F1BFEF68200E9E31F /* UIKit.framework */; };
@@ -26,7 +25,6 @@
 		1947743D1BFEE85C00E9E31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1947743F1BFEE85C00E9E31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194774471BFEEA5300E9E31F /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
-		1947744B1BFEF03E00E9E31F /* EquilateralPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralPhotoView.swift; sourceTree = "<group>"; };
 		1947744D1BFEF05300E9E31F /* EquilateralPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralPhotoCell.swift; sourceTree = "<group>"; };
 		1947745D1BFEF62E00E9E31F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1947745F1BFEF68200E9E31F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -87,7 +85,6 @@
 				194774471BFEEA5300E9E31F /* DemoViewController.swift */,
 				1947743C1BFEE85C00E9E31F /* LaunchScreen.storyboard */,
 				1947743F1BFEE85C00E9E31F /* Info.plist */,
-				1947744B1BFEF03E00E9E31F /* EquilateralPhotoView.swift */,
 				1947744D1BFEF05300E9E31F /* EquilateralPhotoCell.swift */,
 			);
 			path = EquilateralLayoutDemo;
@@ -140,6 +137,7 @@
 				TargetAttributes = {
 					1947742F1BFEE85C00E9E31F = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = G84C9FRAW3;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -230,7 +228,6 @@
 				1947744E1BFEF05300E9E31F /* EquilateralPhotoCell.swift in Sources */,
 				194774341BFEE85C00E9E31F /* AppDelegate.swift in Sources */,
 				194774481BFEEA5300E9E31F /* DemoViewController.swift in Sources */,
-				1947744C1BFEF03E00E9E31F /* EquilateralPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -326,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -339,6 +336,7 @@
 			baseConfigurationReference = A8089597E5D6034AD01D695C /* Pods-EquilateralLayoutDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G84C9FRAW3;
 				INFOPLIST_FILE = EquilateralLayoutDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisbaker.EquilateralLayoutDemo;
@@ -352,6 +350,7 @@
 			baseConfigurationReference = 21E320806E2DB183935CE02A /* Pods-EquilateralLayoutDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G84C9FRAW3;
 				INFOPLIST_FILE = EquilateralLayoutDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisbaker.EquilateralLayoutDemo;
