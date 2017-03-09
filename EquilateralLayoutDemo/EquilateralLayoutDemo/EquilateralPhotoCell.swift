@@ -7,23 +7,23 @@
 //
 
 import UIKit
-import SDWebImage
+import PINRemoteImage
 
-typealias EquilateralPhotoItem = (photoURL: NSURL!, strokeColor: UIColor!)
+typealias EquilateralPhotoItem = (photoURL: URL, strokeColor: UIColor)
 
 class EquilateralPhotoCell: UICollectionViewCell {
     
     static let ReuseIdentifier = "EquilateralPhotoCell"
     
-    let equilateralPhotoView = EquilateralPhotoView(frame: CGRectZero)
+    let equilateralPhotoView = EquilateralPhotoView(frame: CGRect.zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.clearColor()
-        self.contentView.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
+        self.contentView.backgroundColor = UIColor.clear
         
-        self.equilateralPhotoView.frame = CGRectMake(0, 0, frame.width, frame.height)
+        self.equilateralPhotoView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         self.contentView.addSubview(self.equilateralPhotoView)
     }
     
@@ -31,8 +31,8 @@ class EquilateralPhotoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(item: EquilateralPhotoItem) {
+    func configure(_ item: EquilateralPhotoItem) {
         self.equilateralPhotoView.strokeColor = item.strokeColor
-        self.equilateralPhotoView.imageView.sd_setImageWithURL(item.photoURL)
+        self.equilateralPhotoView.imageView.pin_setImage(from: item.photoURL)
     }
 }

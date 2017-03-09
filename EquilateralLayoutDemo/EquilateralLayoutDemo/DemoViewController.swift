@@ -6,6 +6,7 @@
 //  Copyright © 2015 Kris Baker. All rights reserved.
 //
 
+import EquilateralLayout
 import UIKit
 
 class DemoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -13,15 +14,15 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     var collectionView: UICollectionView!
     var layout: EquilateralLayout!
     var items = [EquilateralPhotoItem]()
-    var numberOfItems: Int!
-    var strokeColor: UIColor!
-    var scrollDirection: UICollectionViewScrollDirection!
+    var numberOfItems: Int
+    var strokeColor: UIColor
+    var scrollDirection: UICollectionViewScrollDirection
     
     init(numberOfItems: Int, strokeColor: UIColor, scrollDirection: UICollectionViewScrollDirection) {
-        super.init(nibName: nil, bundle: nil)
-        self.numberOfItems = numberOfItems
         self.strokeColor = strokeColor
+        self.numberOfItems = numberOfItems
         self.scrollDirection = scrollDirection
+        super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -31,7 +32,7 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         generateRandomItems()
         setupLayout()
         setupCollectionView()
@@ -46,31 +47,31 @@ class DemoViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setupCollectionView() {
-        collectionView = UICollectionView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44), collectionViewLayout:layout)
-        collectionView.backgroundColor = UIColor.clearColor()
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - 44), collectionViewLayout:layout)
+        collectionView.backgroundColor = UIColor.clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerClass(EquilateralPhotoCell.self, forCellWithReuseIdentifier: EquilateralPhotoCell.ReuseIdentifier)
+        collectionView.register(EquilateralPhotoCell.self, forCellWithReuseIdentifier: EquilateralPhotoCell.ReuseIdentifier)
         self.view.addSubview(self.collectionView)
     }
     
     func generateRandomItems() {
         for index in 0..<numberOfItems {
-            let photoURL: NSURL! = NSURL(string: "http://lorempixel.com/200/200/?_=\(index)")
-            let item = (photoURL, strokeColor)
+            let photoURL: URL = URL(string: "http://lorempixel.com/200/200/?_=\(index)")!
+            let item = (photoURL: photoURL, strokeColor: strokeColor)
             items.append(item)
         }
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCellWithReuseIdentifier(EquilateralPhotoCell.ReuseIdentifier, forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: EquilateralPhotoCell.ReuseIdentifier, for: indexPath)
     }
     
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let photoCell = cell as? EquilateralPhotoCell {
             photoCell.configure(self.items[indexPath.item])
         }

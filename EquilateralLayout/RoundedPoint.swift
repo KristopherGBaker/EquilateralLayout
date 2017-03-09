@@ -6,7 +6,7 @@
 import CoreGraphics
 
 extension CGPoint {
-    static func roundedPoint(x x: CGFloat, y: CGFloat) -> CGPoint {
+    static func roundedPoint(x: CGFloat, y: CGFloat) -> CGPoint {
         return CGPoint(x: round(x), y: round(y))
     }
 

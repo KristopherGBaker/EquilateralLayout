@@ -3,19 +3,19 @@
 // Copyright (c) 2015 Bodybuilding.com. All rights reserved.
 //
 
-extension _ArrayType where Generator.Element : Comparable {
-    mutating func insertInOrder(item: Generator.Element) {
+extension Array where Element: Comparable {
+    mutating func insertInOrder(_ item: Iterator.Element) {
         if count == 0 {
-            insert(item, atIndex: 0)
+            insert(item, at: 0)
             return
         }
 
         let index = binarySearch(forKey: item)
-        insert(item, atIndex: index)
+        insert(item, at: index)
 
     }
 
-    func binarySearch(forKey k: Generator.Element) -> Int {
+    func binarySearch(forKey k: Iterator.Element) -> Int {
         var lo = 0
         var hi = count
 
@@ -34,7 +34,7 @@ extension _ArrayType where Generator.Element : Comparable {
     }
 
     func isOrdered() -> Bool {
-        for var i = 1; i < count; i++ {
+        for i in 1 ..< count {
             if self[i] < self[i - 1] {
                 return false
             }

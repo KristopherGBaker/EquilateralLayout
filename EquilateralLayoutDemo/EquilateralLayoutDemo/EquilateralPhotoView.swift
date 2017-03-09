@@ -28,12 +28,12 @@ class EquilateralPhotoView: UIView {
         }
     }
     
-    let imageView = UIImageView(frame: CGRectZero)
+    let imageView = UIImageView(frame: CGRect.zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.backgroundColor = UIColor.clear
+        self.imageView.contentMode = UIViewContentMode.scaleAspectFill
         self.addSubview(self.imageView)
     }
     
@@ -41,8 +41,8 @@ class EquilateralPhotoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawRect(rect: CGRect) {
-        let path = UIBezierPath(arcCenter: CGPointMake(0.5 * self.bounds.size.width, 0.5 * self.bounds.size.height), radius: 0.5 * min(self.bounds.size.width, self.bounds.size.height) - self.strokeWidth, startAngle: 0, endAngle: 2 * CGFloat(M_PI), clockwise: false)
+    override func draw(_ rect: CGRect) {
+        let path = UIBezierPath(arcCenter: CGPoint(x: 0.5 * self.bounds.size.width, y: 0.5 * self.bounds.size.height), radius: 0.5 * min(self.bounds.size.width, self.bounds.size.height) - self.strokeWidth, startAngle: 0, endAngle: 2 * CGFloat(M_PI), clockwise: false)
         
         path.lineWidth = self.strokeWidth
         self.strokeColor.setStroke()
@@ -50,7 +50,7 @@ class EquilateralPhotoView: UIView {
         
         let maskLayer = CAShapeLayer()
         maskLayer.frame = rect
-        maskLayer.path = path.CGPath;
+        maskLayer.path = path.cgPath;
         self.imageView.layer.mask = maskLayer
     }
     

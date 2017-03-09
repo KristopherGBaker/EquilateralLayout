@@ -13,6 +13,7 @@
 		1947747F1BFF133700E9E31F /* OrderedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947747A1BFF133700E9E31F /* OrderedArray.swift */; };
 		194774801BFF133700E9E31F /* PointPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947747B1BFF133700E9E31F /* PointPair.swift */; };
 		194774811BFF133700E9E31F /* RoundedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947747C1BFF133700E9E31F /* RoundedPoint.swift */; };
+		A24CC8951E710B27002A6A26 /* EquilateralLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A24CC8941E710B27002A6A26 /* EquilateralLayout.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1947747A1BFF133700E9E31F /* OrderedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedArray.swift; sourceTree = "<group>"; };
 		1947747B1BFF133700E9E31F /* PointPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointPair.swift; sourceTree = "<group>"; };
 		1947747C1BFF133700E9E31F /* RoundedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedPoint.swift; sourceTree = "<group>"; };
+		A24CC8941E710B27002A6A26 /* EquilateralLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquilateralLayout.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		194774631BFF12ED00E9E31F = {
 			isa = PBXGroup;
 			children = (
+				A24CC8941E710B27002A6A26 /* EquilateralLayout.podspec */,
 				1947746F1BFF12ED00E9E31F /* EquilateralLayout */,
 				1947746E1BFF12ED00E9E31F /* Products */,
 			);
@@ -105,11 +108,12 @@
 		194774641BFF12ED00E9E31F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kris Baker";
 				TargetAttributes = {
 					1947746C1BFF12ED00E9E31F = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -135,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24CC8951E710B27002A6A26 /* EquilateralLayout.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +174,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -217,8 +224,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -238,6 +247,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -249,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -260,6 +271,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -267,6 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -277,6 +290,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisbaker.EquilateralLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

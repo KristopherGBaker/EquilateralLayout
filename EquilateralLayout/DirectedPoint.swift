@@ -3,17 +3,22 @@
 // Copyright (c) 2015 Bodybuilding.com. All rights reserved.
 //
 
-import CoreGraphics
-import UIKit
+import Foundation
 
+/// Represents a 2-dimensional point with a scroll direction.
 struct DirectedPoint: Comparable, Hashable {
-    var point: CGPoint = CGPointZero {
+    
+    /// The point.
+    var point: CGPoint = .zero {
         didSet {
             updateHash()
         }
     }
-    var scrollDirection: UICollectionViewScrollDirection = .Horizontal
+    
+    /// The scroll direction.
+    var scrollDirection: UICollectionViewScrollDirection = .horizontal
 
+    /// Initializes the DirectedPoint.
     init() {
 
     }
@@ -24,12 +29,12 @@ struct DirectedPoint: Comparable, Hashable {
         updateHash()
     }
 
-    private mutating func updateHash() {
+    fileprivate mutating func updateHash() {
         let key = "\(point.x),\(point.y)"
         hashValue = key.hashValue
     }
 
-    private (set) var hashValue: Int = "0.0,0.0".hashValue
+    fileprivate (set) var hashValue: Int = "0.0,0.0".hashValue
 }
 
 internal func ==(lhs: DirectedPoint, rhs: DirectedPoint) -> Bool {
@@ -38,7 +43,7 @@ internal func ==(lhs: DirectedPoint, rhs: DirectedPoint) -> Bool {
 }
 
 internal func <(lhs: DirectedPoint, rhs: DirectedPoint) -> Bool {
-    if lhs.scrollDirection == .Horizontal {
+    if lhs.scrollDirection == .horizontal {
         return lhs.point.x < rhs.point.x
     }
     else {

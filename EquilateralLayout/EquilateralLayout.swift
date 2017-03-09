@@ -11,23 +11,23 @@ import UIKit
 
 public class EquilateralLayout: UICollectionViewLayout {
 
-    var scrollDirection: UICollectionViewScrollDirection = .Horizontal {
+    public var scrollDirection: UICollectionViewScrollDirection = .horizontal {
         didSet {
             resetLayout()
         }
     }
     
-    var itemSize: CGSize = CGSizeMake(90, 90)
-    var startingOffset: CGFloat = 80.0
-    var itemSpacing: CGFloat = 8.0
-    var reset: Bool = true
+    public var itemSize: CGSize = CGSize(width: 90, height: 90)
+    public var startingOffset: CGFloat = 80.0
+    public var itemSpacing: CGFloat = 8.0
+    public var reset: Bool = true
     
-    private var points = [DirectedPoint]()
-    private var contentSize: CGSize = CGSizeZero
-    private var dynamicAnimator: UIDynamicAnimator! // the dynamic animator is what provides the spring effect when scrolling
-    private var latestDelta: CGFloat = 0.0
+    fileprivate var points = [DirectedPoint]()
+    fileprivate var contentSize: CGSize = .zero
+    fileprivate var dynamicAnimator: UIDynamicAnimator! // the dynamic animator is what provides the spring effect when scrolling
+    fileprivate var latestDelta: CGFloat = 0.0
     
-    override init() {
+    public override init() {
         super.init()
         commonInit()
     }
@@ -37,17 +37,17 @@ public class EquilateralLayout: UICollectionViewLayout {
         commonInit()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         dynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
     }
     
-    func resetLayout() {
+    public func resetLayout() {
         points.removeAll()
         dynamicAnimator.removeAllBehaviors()
     }
 
-    override public func prepareLayout() {
-        guard let collectionView = self.collectionView, itemCount = self.collectionView?.numberOfItemsInSection(0) where itemCount > 0 && reset
+    override public func prepare() {
+        guard let collectionView = self.collectionView, let itemCount = self.collectionView?.numberOfItems(inSection: 0), itemCount > 0 && reset
             else { return }
         
         reset = false
@@ -56,9 +56,9 @@ public class EquilateralLayout: UICollectionViewLayout {
         let insets = collectionView.contentInset
         let halfWidth = itemSize.width*0.5
         let halfHeight = itemSize.height*0.5
-        let p0 = scrollDirection == .Horizontal ? CGPoint.roundedPoint(x: insets.left + halfWidth, y: collectionView.bounds.midY) : CGPoint.roundedPoint(x: collectionView.bounds.midX, y: insets.top + halfHeight)
+        let p0 = scrollDirection == .horizontal ? CGPoint.roundedPoint(x: insets.left + halfWidth, y: collectionView.bounds.midY) : CGPoint.roundedPoint(x: collectionView.bounds.midX, y: insets.top + halfHeight)
         
-        let side: CGFloat = (scrollDirection == .Horizontal ? itemSize.width : itemSize.height) + itemSpacing
+        let side: CGFloat = (scrollDirection == .horizontal ? itemSize.width : itemSize.height) + itemSpacing
 
         var firstPair = PointPair()
         firstPair.scrollDirection = scrollDirection
@@ -68,7 +68,7 @@ public class EquilateralLayout: UICollectionViewLayout {
             var x1: CGFloat!
             var y1: CGFloat!
             
-            if scrollDirection == .Horizontal {
+            if scrollDirection == .horizontal {
                 x1 = p0.x + startingOffset
                 y1 = sqrt((side*side) - ((x1 - p0.x)*(x1 - p0.x))) + p0.y
             }
@@ -82,7 +82,7 @@ public class EquilateralLayout: UICollectionViewLayout {
         
         let maxVal = generatePoints(firstPair, itemCount: itemCount, bounds: collectionView.bounds, halfWidth: halfWidth, halfHeight: halfHeight)
         
-        if scrollDirection == .Horizontal {
+        if scrollDirection == .horizontal {
             contentSize = CGSize(width: maxVal + halfWidth + 20, height: collectionView.bounds.height - (insets.top + insets.bottom))
         }
         else {
@@ -92,10 +92,11 @@ public class EquilateralLayout: UICollectionViewLayout {
         var itemIndex = 0
 //        var pointOut = "\n"
         
-        let touchLocation = collectionView.panGestureRecognizer.locationInView(collectionView)
+        let touchLocation = collectionView.panGestureRecognizer.location(in: collectionView)
         
         for directedPoint in points {
-            let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: NSIndexPath(forItem: itemIndex++, inSection: 0))
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: itemIndex, section: 0))
+            itemIndex = itemIndex + 1
             attributes.size = itemSize
             attributes.center = directedPoint.point
             var center = directedPoint.point
@@ -107,13 +108,13 @@ public class EquilateralLayout: UICollectionViewLayout {
             springBehaviour.damping = 0.8
             springBehaviour.frequency = 1.0
             
-            if (!CGPointEqualToPoint(CGPointZero, touchLocation)) {
+            if (!CGPoint.zero.equalTo(touchLocation)) {
                 let yDistanceFromTouch = fabs(touchLocation.y - springBehaviour.anchorPoint.y)
                 let xDistanceFromTouch = fabs(touchLocation.x - springBehaviour.anchorPoint.x)
                 let scrollResistance = (yDistanceFromTouch + xDistanceFromTouch) / 1500.0
                 
                 if latestDelta < 0 {
-                    if scrollDirection == .Vertical {
+                    if scrollDirection == .vertical {
                         center.y += max(latestDelta, latestDelta*scrollResistance)
                     }
                     else {
@@ -121,7 +122,7 @@ public class EquilateralLayout: UICollectionViewLayout {
                     }
                 }
                 else {
-                    if scrollDirection == .Vertical {
+                    if scrollDirection == .vertical {
                         center.y += min(latestDelta, latestDelta*scrollResistance)
                     }
                     else {
@@ -137,7 +138,7 @@ public class EquilateralLayout: UICollectionViewLayout {
 //        print(pointOut + "\n")
     }
 
-    private func generatePoints(firstPair: PointPair, itemCount: Int, bounds: CGRect, halfWidth: CGFloat, halfHeight: CGFloat) -> CGFloat {
+    fileprivate func generatePoints(_ firstPair: PointPair, itemCount: Int, bounds: CGRect, halfWidth: CGFloat, halfHeight: CGFloat) -> CGFloat {
 //        let start = NSDate().timeIntervalSince1970
         
         var pairs = [PointPair]()
@@ -151,7 +152,7 @@ public class EquilateralLayout: UICollectionViewLayout {
         points.insertInOrder(firstPair.first)
         points.insertInOrder(firstPair.second)
         
-        let containingRect = scrollDirection == .Horizontal ? CGRect(x: 0, y: 0, width: CGFloat.max, height: bounds.height) : CGRect(x: 0, y: 0, width: bounds.width, height: CGFloat.max)
+        let containingRect = scrollDirection == .horizontal ? CGRect(x: 0, y: 0, width: CGFloat.greatestFiniteMagnitude, height: bounds.height) : CGRect(x: 0, y: 0, width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
         
         var maxX = firstPair.second.point.x
         var maxY = firstPair.second.point.y
@@ -206,11 +207,11 @@ public class EquilateralLayout: UICollectionViewLayout {
 //        let end = NSDate().timeIntervalSince1970
 //        print("generating points took \(end - start) seconds")
         
-        return scrollDirection == .Horizontal ? maxX : maxY
+        return scrollDirection == .horizontal ? maxX : maxY
     }
     
-    func addNewPairs(containingRect: CGRect, pair: PointPair, point: DirectedPoint, halfWidth: CGFloat, halfHeight: CGFloat, visited: Set<PointPair>) -> (pairs: [PointPair], contained: Bool) {
-        if CGRectContainsRect(containingRect, CGRectMake(point.point.x - halfWidth, point.point.y - halfHeight, itemSize.width, itemSize.width)) {
+    func addNewPairs(_ containingRect: CGRect, pair: PointPair, point: DirectedPoint, halfWidth: CGFloat, halfHeight: CGFloat, visited: Set<PointPair>) -> (pairs: [PointPair], contained: Bool) {
+        if containingRect.contains(CGRect(x: point.point.x - halfWidth, y: point.point.y - halfHeight, width: itemSize.width, height: itemSize.width)) {
             var pairs = [PointPair]()
             let p0 = PointPair(first: pair.first, second: point)
             let p1 = PointPair(first: pair.second, second: point)
@@ -229,28 +230,28 @@ public class EquilateralLayout: UICollectionViewLayout {
         return (pairs: [], contained: false)
     }
     
-    override public func collectionViewContentSize() -> CGSize {
+    override public var collectionViewContentSize : CGSize {
         return contentSize
     }
     
-    override public func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        return dynamicAnimator.layoutAttributesForCellAtIndexPath(indexPath)
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return dynamicAnimator.layoutAttributesForCell(at: indexPath)
     }
     
-    override public func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let attributes = self.dynamicAnimator.itemsInRect(rect) as? [UICollectionViewLayoutAttributes]
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let attributes = self.dynamicAnimator.items(in: rect) as? [UICollectionViewLayoutAttributes]
         return attributes
     }
 
-    override public func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         guard let collectionView = self.collectionView else { return false }
-        let delta = scrollDirection == .Vertical ?
+        let delta = scrollDirection == .vertical ?
             newBounds.origin.y - collectionView.bounds.origin.y :
             newBounds.origin.x - collectionView.bounds.origin.x
         
         latestDelta = delta
         
-        let touchLocation = collectionView.panGestureRecognizer.locationInView(collectionView)
+        let touchLocation = collectionView.panGestureRecognizer.location(in: collectionView)
         
         if let behaviors = dynamicAnimator.behaviors as? [UIAttachmentBehavior] {
             for springBehaviour in behaviors {
@@ -261,7 +262,7 @@ public class EquilateralLayout: UICollectionViewLayout {
                 if let item = springBehaviour.items.first as? UICollectionViewLayoutAttributes {
                     var center = item.center
                     if delta < 0 {
-                        if scrollDirection == .Vertical {
+                        if scrollDirection == .vertical {
                             center.y += max(delta, delta*scrollResistance)
                         }
                         else {
@@ -269,7 +270,7 @@ public class EquilateralLayout: UICollectionViewLayout {
                         }
                     }
                     else {
-                        if scrollDirection == .Vertical {
+                        if scrollDirection == .vertical {
                             center.y += min(delta, delta*scrollResistance)
                         }
                         else {
@@ -278,7 +279,7 @@ public class EquilateralLayout: UICollectionViewLayout {
                     }
                     item.center = center
                     
-                    dynamicAnimator.updateItemUsingCurrentState(item)
+                    dynamicAnimator.updateItem(usingCurrentState: item)
                 }
             }
         }

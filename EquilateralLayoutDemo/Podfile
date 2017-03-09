@@ -4,4 +4,7 @@ platform :ios, '9.0'
 use_frameworks!
 inhibit_all_warnings!
 
-pod 'SDWebImage'
+target 'EquilateralLayoutDemo' do
+    pod 'EquilateralLayout', :path => '..'
+    pod 'PINRemoteImage', '= 3.0.0-beta.8'
+end
