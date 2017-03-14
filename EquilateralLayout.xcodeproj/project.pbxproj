@@ -13,9 +13,14 @@
 		1947747F1BFF133700E9E31F /* OrderedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947747A1BFF133700E9E31F /* OrderedArray.swift */; };
 		194774801BFF133700E9E31F /* PointPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947747B1BFF133700E9E31F /* PointPair.swift */; };
 		194774811BFF133700E9E31F /* RoundedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947747C1BFF133700E9E31F /* RoundedPoint.swift */; };
+		A21572101E778F4200742EFD /* OrderedArrayTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A215720F1E778F4200742EFD /* OrderedArrayTestCase.swift */; };
+		A21572121E779BDD00742EFD /* EquilateralPointsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21572111E779BDD00742EFD /* EquilateralPointsTestCase.swift */; };
+		A21572141E779BED00742EFD /* PointPairTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21572131E779BED00742EFD /* PointPairTestCase.swift */; };
+		A21572161E779BF700742EFD /* RoundedPointTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21572151E779BF700742EFD /* RoundedPointTestCase.swift */; };
+		A21572181E779C0200742EFD /* DirectedPointTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21572171E779C0200742EFD /* DirectedPointTestCase.swift */; };
 		A24CC8951E710B27002A6A26 /* EquilateralLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A24CC8941E710B27002A6A26 /* EquilateralLayout.podspec */; };
-		A24CC89F1E71176E002A6A26 /* EquilateralLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24CC89E1E71176E002A6A26 /* EquilateralLayoutTests.swift */; };
 		A24CC8A11E71176E002A6A26 /* EquilateralLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1947746D1BFF12ED00E9E31F /* EquilateralLayout.framework */; };
+		A24CC8A81E7129E7002A6A26 /* EquilateralPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24CC8A71E7129E7002A6A26 /* EquilateralPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +42,15 @@
 		1947747A1BFF133700E9E31F /* OrderedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedArray.swift; sourceTree = "<group>"; };
 		1947747B1BFF133700E9E31F /* PointPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointPair.swift; sourceTree = "<group>"; };
 		1947747C1BFF133700E9E31F /* RoundedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedPoint.swift; sourceTree = "<group>"; };
+		A215720F1E778F4200742EFD /* OrderedArrayTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedArrayTestCase.swift; sourceTree = "<group>"; };
+		A21572111E779BDD00742EFD /* EquilateralPointsTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralPointsTestCase.swift; sourceTree = "<group>"; };
+		A21572131E779BED00742EFD /* PointPairTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointPairTestCase.swift; sourceTree = "<group>"; };
+		A21572151E779BF700742EFD /* RoundedPointTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedPointTestCase.swift; sourceTree = "<group>"; };
+		A21572171E779C0200742EFD /* DirectedPointTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectedPointTestCase.swift; sourceTree = "<group>"; };
 		A24CC8941E710B27002A6A26 /* EquilateralLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquilateralLayout.podspec; sourceTree = "<group>"; };
 		A24CC89C1E71176E002A6A26 /* EquilateralLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EquilateralLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A24CC89E1E71176E002A6A26 /* EquilateralLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquilateralLayoutTests.swift; sourceTree = "<group>"; };
 		A24CC8A01E71176E002A6A26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A24CC8A71E7129E7002A6A26 /* EquilateralPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquilateralPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				194774781BFF133700E9E31F /* DirectedPoint.swift */,
+				194774701BFF12ED00E9E31F /* EquilateralLayout.h */,
 				194774791BFF133700E9E31F /* EquilateralLayout.swift */,
+				A24CC8A71E7129E7002A6A26 /* EquilateralPoints.swift */,
+				194774721BFF12ED00E9E31F /* Info.plist */,
 				1947747A1BFF133700E9E31F /* OrderedArray.swift */,
 				1947747B1BFF133700E9E31F /* PointPair.swift */,
 				1947747C1BFF133700E9E31F /* RoundedPoint.swift */,
-				194774701BFF12ED00E9E31F /* EquilateralLayout.h */,
-				194774721BFF12ED00E9E31F /* Info.plist */,
 			);
 			path = EquilateralLayout;
 			sourceTree = "<group>";
@@ -98,8 +109,12 @@
 		A24CC89D1E71176E002A6A26 /* EquilateralLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				A24CC89E1E71176E002A6A26 /* EquilateralLayoutTests.swift */,
+				A21572171E779C0200742EFD /* DirectedPointTestCase.swift */,
+				A21572111E779BDD00742EFD /* EquilateralPointsTestCase.swift */,
 				A24CC8A01E71176E002A6A26 /* Info.plist */,
+				A215720F1E778F4200742EFD /* OrderedArrayTestCase.swift */,
+				A21572131E779BED00742EFD /* PointPairTestCase.swift */,
+				A21572151E779BF700742EFD /* RoundedPointTestCase.swift */,
 			);
 			path = EquilateralLayoutTests;
 			sourceTree = "<group>";
@@ -170,6 +185,7 @@
 					};
 					A24CC89B1E71176E002A6A26 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = G84C9FRAW3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -215,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24CC8A81E7129E7002A6A26 /* EquilateralPoints.swift in Sources */,
 				194774801BFF133700E9E31F /* PointPair.swift in Sources */,
 				194774811BFF133700E9E31F /* RoundedPoint.swift in Sources */,
 				1947747D1BFF133700E9E31F /* DirectedPoint.swift in Sources */,
@@ -227,7 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A24CC89F1E71176E002A6A26 /* EquilateralLayoutTests.swift in Sources */,
+				A21572181E779C0200742EFD /* DirectedPointTestCase.swift in Sources */,
+				A21572161E779BF700742EFD /* RoundedPointTestCase.swift in Sources */,
+				A21572141E779BED00742EFD /* PointPairTestCase.swift in Sources */,
+				A21572121E779BDD00742EFD /* EquilateralPointsTestCase.swift in Sources */,
+				A21572101E778F4200742EFD /* OrderedArrayTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +401,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = G84C9FRAW3;
 				INFOPLIST_FILE = EquilateralLayoutTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -395,6 +417,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = G84C9FRAW3;
 				INFOPLIST_FILE = EquilateralLayoutTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -432,6 +455,7 @@
 				A24CC8A61E71176E002A6A26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

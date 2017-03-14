@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A24CC89B1E71176E002A6A26"
+               BuildableName = "EquilateralLayoutTests.xctest"
+               BlueprintName = "EquilateralLayoutTests"
+               ReferencedContainer = "container:EquilateralLayout.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1947746C1BFF12ED00E9E31F"
+            BuildableName = "EquilateralLayout.framework"
+            BlueprintName = "EquilateralLayout"
+            ReferencedContainer = "container:EquilateralLayout.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

@@ -1,14 +1,15 @@
 //
-//  EquilateralLayoutTests.swift
-//  EquilateralLayoutTests
+//  EquilateralPointsTestCase.swift
+//  EquilateralLayout
 //
-//  Created by Kris Baker on 3/8/17.
+//  Created by Kris Baker on 3/13/17.
 //  Copyright © 2017 Kris Baker. All rights reserved.
 //
 
+@testable import EquilateralLayout
 import XCTest
 
-class EquilateralLayoutTests: XCTestCase {
+class EquilateralPointsTestCase: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,13 +24,6 @@ class EquilateralLayoutTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }
